@@ -1,0 +1,28 @@
+services:
+  favian:
+    container_name: "favian"
+    image: "tytko/favian"
+  shadow-council:
+    image: "tytko/shadow-council"
+    container_name: "shadow-council"
+  vaultkeeper:
+    image: "tytko/vaultkeeper"
+    container_name: "vaultkeeper"
+  archivist:
+    image: "tytko/archivist"
+    container_name: "archivist"
+    ports:
+      - "5020:5000"
+      - "5021:5001"
+  auto_tester:
+    image: "tytko/auto-tester"
+    container_name: "test"
+    ports:
+      - "5090:5000"
+      - "5091:5001"
+  api-gateway:
+     image: "tytko/elo-api-gateway"
+     container_name: "api-gateway"
+     ports:
+       - "5000:5000"
+       - "5001:433"
